@@ -1,6 +1,6 @@
 <%= form_for(review) do |f| %>
-  <% if review.errors.any? %>
-    <div id="error_explanation">
+  <!--<% if review.errors.any? %>
+     <div id="error_explanation">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
       <ul>
@@ -8,9 +8,8 @@
         <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
+    </div>-->
   <% end %>
-
   <div class="field">
     <%= f.label :rating %>
     <%= f.number_field :rating %>
