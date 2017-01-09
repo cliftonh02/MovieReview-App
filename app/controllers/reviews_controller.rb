@@ -25,7 +25,8 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
-
+    #byebug
+    #@review.movie_id = @review.movie_id.to_i
     respond_to do |format|
       if @review.save
         format.html { redirect_to @review, notice: 'Review was successfully created.' }
@@ -69,6 +70,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:raing, :description)
+      params.require(:review).permit(:rating, :description, :movie_id)
     end
 end
