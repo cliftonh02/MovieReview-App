@@ -1,15 +1,23 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :find_movie, only: [:show, :edit, :update, :destroy]
 
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all.order("created_at DESC")
-  end
+    #if params[:category].blank?
+			@movies = Movie.all.order("created_at DESC")
+		#else
+		#	@category_id = Category.find_by(name: params[:category]).id
+		#	@movies = Movie.where(:category_id => @category_id).order("created_at DESC")
+		end
+
+
+
 
   # GET /movies/1
   # GET /movies/1.json
   def show
+    @movie = Movie.find(params[:id])
   end
 
   # GET /movies/new
@@ -17,6 +25,9 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
+def find_movie
+  @movie = Movie.find(params[:id])
+end
   # GET /movies/1/edit
   def edit
   end
@@ -24,7 +35,7 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    @movie = Movie.new(movie_params)
+    @movie = Movie.create!(movie_params)
 
     respond_to do |format|
       if @movie.save
@@ -69,6 +80,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.fetch(:movie, {})
+      params.require(:movie).permit(:title, :description, :director)
     end
 end
