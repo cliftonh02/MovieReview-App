@@ -213,3 +213,11 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-01-08 22:30:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (6.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  Rendered movies/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 408ms (Views: 385.4ms | ActiveRecord: 0.0ms)
+
+
