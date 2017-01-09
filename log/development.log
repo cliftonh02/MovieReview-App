@@ -980,3 +980,131 @@ app/controllers/reviews_controller.rb:67:in `set_review'
   Rendering /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
   Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (114.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7650272522505945360);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMovies (20170109045426)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (42.6ms)[0m  [1m[35mCREATE TABLE "movies" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7650272522505945360)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (222.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Movie-Review-App_development"[0m
+  [1m[35m (193.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Movie-Review-App_test"[0m
+  [1m[35m (939.0ms)[0m  [1m[35mCREATE DATABASE "Movie-Review-App_development" ENCODING = 'unicode'[0m
+  [1m[35m (458.2ms)[0m  [1m[35mCREATE DATABASE "Movie-Review-App_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7650272522505945360);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviews (20170109013858)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "rating" integer, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (25.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170109013858"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMovies (20170109045426)
+  [1m[35m (12.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "movies" ("id" serial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170109045426"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-09 04:55:35 UTC], ["updated_at", 2017-01-09 04:55:35 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7650272522505945360)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/reviews/index" for ::1 at 2017-01-08 23:55:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mReview Load (9.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 64ms (ActiveRecord: 16.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=index):
+  
+app/controllers/reviews_controller.rb:67:in `set_review'
+  Rendering /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (172.5ms)
+Started GET "/" for ::1 at 2017-01-08 23:55:57 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (6.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 2947ms (Views: 2929.4ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-08 23:56:05 -0500
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (105.2ms)
+  Rendered movies/new.html.erb within layouts/application (113.4ms)
+Completed 200 OK in 203ms (Views: 184.2ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/movies" for ::1 at 2017-01-08 23:56:06 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JYFEUaSV2wUlbgOiAuo2kXWJ/JKA3OVIS1h0OWPWhT8+MrZiUc4DM148DIIHKhYoc5LizcvMrUAvEQtrWlploQ==", "commit"=>"Create Movie"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.2ms)[0m  [1m[32mINSERT INTO "movies" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-01-09 04:56:06 UTC], ["updated_at", 2017-01-09 04:56:06 UTC]]
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 32ms (ActiveRecord: 26.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-08 23:56:06 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (12.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 155ms (Views: 134.7ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-08 23:56:08 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 92ms (Views: 88.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/movies/1" for ::1 at 2017-01-08 23:56:12 -0500
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+I80U1P/NwJdRSAHn67p0PAn3jK79IPr7BcfOrD8d56+cGCFPqj6G+zBsuVhgzoDlhTdYtVoF/CsP1yRRvBZvA==", "id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 19ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-08 23:56:12 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 78ms (Views: 72.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-08 23:56:20 -0500
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (6.3ms)
+  Rendered movies/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 162ms (Views: 157.7ms | ActiveRecord: 0.0ms)
+
+
